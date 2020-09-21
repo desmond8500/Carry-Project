@@ -9,11 +9,11 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    @foreach ($menus as $menu)
+                    {{-- @foreach ($menus as $menu)
                         <li class="nav-item">
                             <a class="nav-link" href="href="{{ route($menu->route) }}">{{ $menu->name }}</a>
                         </li>
-                    @endforeach
+                    @endforeach --}}
 
                 </ul>
                 <div class="form-inline my-2 my-lg-0">
