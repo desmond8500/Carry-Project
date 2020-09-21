@@ -1,9 +1,14 @@
 <?php
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return redirect()->route('carry.index');
 })->name('index');
 
+// ============================================================================
+// Carry
+// ============================================================================
+Route::get('carry/index', 'CarryController@index')->name('carry.index');
 
 // ============================================================================
 // Backofffice
