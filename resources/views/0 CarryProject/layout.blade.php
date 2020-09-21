@@ -18,11 +18,7 @@
         @yield('content')
     </div>
 
-    <footer class="footer mt-auto py-3">
-        <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
-        </div>
-    </footer>
+
 
     <script src="{{ asset('js/app.js')}}"></script>
     {{-- <script src="{{ asset("library/highlight/highlight.pack.js") }}"></script> --}}
