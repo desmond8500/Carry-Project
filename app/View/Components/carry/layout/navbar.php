@@ -6,22 +6,30 @@ use Illuminate\View\Component;
 
 class navbar extends Component
 {
-    public $menus;
+    // public $menus;
 
     public function __construct()
     {
-        $this->menus = json_decode('
-            [
-                { "name": "Acceuil", "route": "carry.index" },
-                { "name": "Notes", "route": "devnotes" }
-            ]
-        ');
+        // $this->menus = json_decode('
+        //     [
+        //         { "name": "Acceuil", "route": "carry.index" },
+        //         { "name": "Notes", "route": "devnotes" }
+        //     ]
+        // ');
     }
 
 
     public function render()
     {
-        $menus = $this->menus;
-        return view('components.carry.layout.navbar',compact('menus'));
+        return view('components.carry.layout.navbar');
+    }
+
+    public function menus(){
+        return json_decode('
+            [
+                { "name": "Acceuil", "route": "carry.index" },
+                { "name": "Notes", "route": "devnotes" }
+            ]
+        ');
     }
 }
