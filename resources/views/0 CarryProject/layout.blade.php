@@ -8,7 +8,15 @@
     <title>Carry Project</title>
 </head>
 <body>
-    <x-carry.layout.navbar />
+    @php
+        $menus = json_decode('
+             [
+                 { "name": "Acceuil", "route": "carry.index" },
+                 { "name": "Notes", "route": "devnotes" }
+             ]
+        ');
+    @endphp
+    <x-carry.layout.navbar :menus="$menus" />
 
     <div class="container">
         @yield('content')

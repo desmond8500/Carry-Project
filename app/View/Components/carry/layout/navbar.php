@@ -6,10 +6,11 @@ use Illuminate\View\Component;
 
 class navbar extends Component
 {
-    // public $menus;
+    public $menus;
 
-    public function __construct()
+    public function __construct($menus)
     {
+        $this->menus = $menus;
         // $this->menus = json_decode('
         //     [
         //         { "name": "Acceuil", "route": "carry.index" },
@@ -24,12 +25,12 @@ class navbar extends Component
         return view('components.carry.layout.navbar');
     }
 
-    public function menus(){
-        return json_decode('
-            [
-                { "name": "Acceuil", "route": "carry.index" },
-                { "name": "Notes", "route": "devnotes" }
-            ]
-        ');
-    }
+    // public function menus(){
+    //     return json_decode('
+    //         [
+    //             { "name": "Acceuil", "route": "carry.index" },
+    //             { "name": "Notes", "route": "devnotes" }
+    //         ]
+    //     ');
+    // }
 }
