@@ -9,9 +9,9 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    @foreach ($navigation as $item)
+                    @foreach ($menus as $menu)
                         <li class="nav-item">
-                            <a class="nav-link" href="href="{{ route($item->route) }}">{{ $item->name }}</a>
+                            <a class="nav-link" href="href="{{ route($menu->route) }}">{{ $menu->name }}</a>
                         </li>
                     @endforeach
 

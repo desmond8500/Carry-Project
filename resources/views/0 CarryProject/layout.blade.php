@@ -8,7 +8,7 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/vuepress.css') }}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/code.css') }}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset("library/highlight/styles/atom-one-dark.css")}}"> --}}
-    <title>DevNotes</title>
+    <title>Carry Project</title>
 </head>
 <body>
 
