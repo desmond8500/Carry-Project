@@ -21,8 +21,7 @@ class navbar extends Component
 
     public function render()
     {
-        return view('components.carry.layout.navbar',[
-            'menus'=>$this->menus
-        ]);
+        $menus = $this->menus;
+        return view('components.carry.layout.navbar',compact('menus'));
     }
 }
