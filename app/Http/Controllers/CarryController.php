@@ -94,4 +94,10 @@ class CarryController extends Controller
         Auth::logout();
         return redirect()->route('carry.index');
     }
+
+    public function useredit(Request $request){
+        echo "comming";
+
+        return redirect()->back();
+    }
 }

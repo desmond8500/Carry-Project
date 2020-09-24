@@ -9,14 +9,25 @@
                 <h3>{{ $car->name }}</h3>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <b>Volume :</b> <span class="float-right">{{ $car->volume }}</span>
+                        <b>Volume :</b> <span class="float-right">{{ $car->volume }} cm3</span>
                     </li>
                     <li class="list-group-item">
-                        <b>Prix :</b> <span class="float-right">{{ $car->prix }}</span>
+                        <b>Prix :</b> <span class="float-right">{{ $car->prix ?? '15 000' }} CFA</span>
+                    </li>
+                    <li class="list-group-item">
+                        <b>Immatriculation :</b> <span class="float-right">{{ $car->ci ?? '15 000' }} </span>
+                    </li>
+                    <li class="list-group-item">
                     </li>
                 </ul>
+                <p>
+                    {{ $car->description }}
+                </p>
 
-                {{-- <a href="{{ route('carry.car',['car'=>$car]) }}" class="btn btn-primary float-right action_button">Consulter</a> --}}
+                {{-- <a href=" " class="btn btn-success float-right action_button">Editer</a> --}}
+
+                @include('0 CarryProject.form.editCar',['id'=>"dd$car->id"])
+
             </div>
         </div>
     </div>

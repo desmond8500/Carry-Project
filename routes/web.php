@@ -21,6 +21,7 @@ Route::get('carry/login', 'CarryController@login')->name('carry.login');
 Route::get('carry/register', 'CarryController@register')->name('carry.register');
 Route::post('carry/auth', 'CarryController@auth')->name('carry.auth');
 Route::get('carry/logout', 'CarryController@logout')->name('carry.logout');
+Route::post('carry/useredit', 'CarryController@useredit')->name('carry.useredit');
 
 // ============================================================================
 // Backofffice

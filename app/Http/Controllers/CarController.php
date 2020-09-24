@@ -130,9 +130,17 @@ class CarController extends AppBaseController
 
         $car = $this->carRepository->update($request->all(), $id);
 
+        if($request->photo){
+            $car->photo = "Carry/cars/$car->id/" . $request->photo->getClientOriginalName();
+            $car->save();
+
+            Storage::disk('public')->put($car->photo, File::get($request->photo));
+        }
+
+
         Flash::success('Car updated successfully.');
 
-        return redirect(route('cars.index'));
+        return redirect()->back();
     }
 
     /**

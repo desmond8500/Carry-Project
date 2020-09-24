@@ -41,15 +41,32 @@
                 </form>
             </x-modal>
         </div>
+        <div class="col-md-8">
+                 @foreach ($cars as $car)
+                        <x-carry.carinfo :car="$car"/>
+                @endforeach
+        </div>
 
-        @foreach ($cars as $car)
-            <div class="col-md-8">
-                <x-carry.carinfo :car="$car"/>
+
+        <div class="col-md-4">
+            <div class="card border border-dark">
+                <div class="card-body">
+                    <img src="{{ asset('icons/005-user.png') }}" class="img-fluid" alt="">
+
+                    <ul class="list-group list-group-flush">
+                        <h3 class="list-group-item text-center">
+                            <b>{{ $user->prenom }} {{ $user->nom }}</b>
+                        </h3>
+                        <li class="list-group-item">
+                            <b>Téléphone :</b> <span class="float-right">{{ $user->tel }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Email :</b> <span class="float-right">{{ $user->email }}</span>
+                        </li>
+                    </ul>
+                    @include('0 CarryProject.form.editUser')
+                </div>
             </div>
-        @endforeach
-
-
-
-
+        </div>
     </div>
 @endsection
