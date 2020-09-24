@@ -12,7 +12,7 @@
     @php
         $menus = json_decode('
              [
-                 { "name": "Commandes", "route": "devnotes" , "access": "0"},
+                 { "name": "Commandes", "route": "carry.commandes" , "access": "0"},
                  { "name": "Clients", "route": "devnotes" , "access": "2"},
                  { "name": "Véhicules", "route": "carry.carList" , "access": "2"}
              ]

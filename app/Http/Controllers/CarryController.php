@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\Commande;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,6 +30,25 @@ class CarryController extends Controller
         $cars = Car::where('owner_id',$user->id)->get();
 
         return view('0 CarryProject.pages.cars',compact('user', 'cars'));
+    }
+    public function addCommande(Request $request){
+        $commande = new Commande();
+
+        $commande->user_id = $request->user_id;
+        $commande->car_id = $request->car_id;
+        $commande->statut = $request->statut;
+        $commande->save();
+
+        return redirect()->back();
+    }
+    public function commandes(){
+        $user = Auth::user();
+        $list = null;
+        $commandes = Commande::where('user_id', $user->id)->get();
+        foreach ($commandes as $key => $commande) {
+            $list[] = Car::find($commande->car_id);
+        }
+        return view('0 CarryProject.pages.commandes', compact('list'));
     }
 
     public function login(){

@@ -11,6 +11,8 @@ Route::get('/', function () {
 Route::get('carry/index', 'CarryController@index')->name('carry.index');
 Route::get('carry/car', 'CarryController@car')->name('carry.car');
 Route::get('carry/carList', 'CarryController@carList')->name('carry.carList');
+Route::get('carry/addCommande', 'CarryController@addCommande')->name('carry.addCommande');
+Route::get('carry/commandes', 'CarryController@commandes')->name('carry.commandes');
 
 
 // auth
@@ -43,3 +45,6 @@ Route::post('generator_builder/generate-from-file','\InfyOm\GeneratorBuilder\Con
 
 
 Route::resource('cars', 'CarController');
+
+
+Route::resource('commandes', 'CommandeController');

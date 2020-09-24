@@ -16,7 +16,7 @@
                     </li>
                 </ul>
 
-                <a href="{{ route('carry.car',['car'=>$car]) }}" class="btn btn-primary float-right action_button">Consulter</a>
+                {{-- <a href="{{ route('carry.car',['car'=>$car]) }}" class="btn btn-primary float-right action_button">Consulter</a> --}}
             </div>
         </div>
     </div>

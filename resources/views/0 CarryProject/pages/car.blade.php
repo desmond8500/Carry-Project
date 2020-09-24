@@ -20,13 +20,18 @@
                             <b>Description :</b> <span class="float-right">{{ $car->description }}</span>
                         </li>
                     </ul>
-                    <a class="btn btn-primary float-right mt-4" href="">Commander</a>
+                    @auth
+                        <a class="btn btn-primary float-right mt-4" href="{{ route("carry.addCommande",['user_id'=>$user->id, 'car_id'=>$car->id, 'statut'=>'true']) }}">Commander</a>
+                    @else
+                        <div class="mt-4">
+                            Connectez-vous pour pouvoir passer une commande <a class="btn btn-primary" href="{{ route('carry.login') }}" >Connexion</a>
+
+                        </div>
+
+
+                    @endauth
                 </div>
             </div>
-
-
         </div>
     </div>
-
-
 @endsection
