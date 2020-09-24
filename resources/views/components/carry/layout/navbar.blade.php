@@ -11,13 +11,18 @@
                 <ul class="navbar-nav mr-auto">
                     @foreach ($menus as $menu)
                         <li class="nav-item">
-                            <a class="nav-link" href="href="{{ route($menu->route) }}">{{ $menu->name }}</a>
+                            <a class="nav-link" href="{{ route($menu->route) }}">{{ $menu->name }}</a>
                         </li>
                     @endforeach
 
                 </ul>
                 <div class="form-inline my-2 my-lg-0">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Connexion</button>
+                    @auth
+                        <a class="btn btn-outline-success my-2 my-sm-0" href="{{ route('carry.logout') }}">Déconnexion</a>
+                    @else
+                        <a class="btn btn-outline-success my-2 my-sm-0" href="{{ route('carry.login') }}">Connexion</a>
+                    @endauth
+
                 </div>
             </div>
         </div>

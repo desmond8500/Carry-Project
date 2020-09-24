@@ -11,26 +11,10 @@ class navbar extends Component
     public function __construct($menus)
     {
         $this->menus = $menus;
-        // $this->menus = json_decode('
-        //     [
-        //         { "name": "Acceuil", "route": "carry.index" },
-        //         { "name": "Notes", "route": "devnotes" }
-        //     ]
-        // ');
     }
-
 
     public function render()
     {
         return view('components.carry.layout.navbar');
     }
-
-    // public function menus(){
-    //     return json_decode('
-    //         [
-    //             { "name": "Acceuil", "route": "carry.index" },
-    //             { "name": "Notes", "route": "devnotes" }
-    //         ]
-    //     ');
-    // }
 }

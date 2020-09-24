@@ -21,7 +21,28 @@
     <div class="container">
         @yield('content')
     </div>
-
+    <div class="footer">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="{{ route('devnotes')}}" class="text-dark">Notes</a>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
     <script src="{{ asset('js/app.js')}}"></script>
 </body>
 </html>
+
+
+ <style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: darkgrey;
+  color: white;
+}
+</style>
+

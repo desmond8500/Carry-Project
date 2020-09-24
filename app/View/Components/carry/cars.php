@@ -6,21 +6,13 @@ use Illuminate\View\Component;
 
 class cars extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $car;
+
+    public function __construct($car)
     {
-        //
+        $this->car = $car;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\View\View|string
-     */
     public function render()
     {
         return view('components.carry.cars');
