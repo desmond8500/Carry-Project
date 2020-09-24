@@ -10,6 +10,9 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
+                    @php
+                        $user = Auth::user();
+                    @endphp
                     @auth
                         @foreach ($menus as $menu)
                             @if ($menu->access == 0 || $menu->access == $user->role)
