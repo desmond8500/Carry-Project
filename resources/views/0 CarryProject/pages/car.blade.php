@@ -20,17 +20,18 @@
                             <b>Description :</b> <span class="float-right">{{ $car->description }}</span>
                         </li>
                     </ul>
-                    @auth
+                    {{-- @auth
                         <a class="btn btn-primary float-right mt-4" href="{{ route("carry.addCommande",['user_id'=>$user->id, 'car_id'=>$car->id, 'statut'=>'true']) }}">Commander</a>
                     @else
                         <div class="mt-4">
                             Connectez-vous pour pouvoir passer une commande <a class="btn btn-primary" href="{{ route('carry.login') }}" >Connexion</a>
                         </div>
-                    @endauth
+                    @endauth --}}
                 </div>
             </div>
         </div>
         <div class="col-md-4">
+            @auth
             @if($user->id == $car->owner_id)
                 <form action="{{ route('trajets.store') }}" method="post">
                     @csrf
@@ -66,8 +67,10 @@
                 </form>
 
             @endif
+            @endauth
         </div>
         <div class="col-md-12 mt-4">
+            <h3>Trajets</h3>
             <div class="card">
                 <table class="table">
                     <thead class="thead-dark">
@@ -87,7 +90,14 @@
                                 <td>{{ App\Http\Controllers\CarryController::getLieu($trajet->fin)->nom }}</td>
                                 <td>{{ $trajet->prix }}</td>
                                 <td>
-                                    <a href="" class="btn btn-primary">Commander</a>
+                                    @auth
+                                        <a href="" class="btn btn-primary">Commander</a>
+                                        {{-- <a class="btn btn-primary float-right mt-4" href="{{ route("carry.addCommande",['user_id'=>$user->id, 'car_id'=>$car->id, 'statut'=>'true']) }}">Commander</a> --}}
+                                    @else
+                                        <div class="mt-4">
+                                            Connectez-vous pour pouvoir passer une commande <a class="btn btn-primary" href="{{ route('carry.login') }}" >Connexion</a>
+                                        </div>
+                                    @endauth
                                 </td>
                             </tr>
 
