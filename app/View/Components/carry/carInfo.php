@@ -4,7 +4,7 @@ namespace App\View\Components\carry;
 
 use Illuminate\View\Component;
 
-class carInfo extends Component
+class carinfo extends Component
 {
     public $car;
 
@@ -15,6 +15,6 @@ class carInfo extends Component
 
     public function render()
     {
-        return view('components.carry.car-info');
+        return view('components.carry.carinfo');
     }
 }

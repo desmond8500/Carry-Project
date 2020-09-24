@@ -44,7 +44,7 @@
 
         @foreach ($cars as $car)
             <div class="col-md-8">
-                <x-carry.carInfo :car="$car"/>
+                <x-carry.carinfo :car="$car"/>
             </div>
         @endforeach
 
