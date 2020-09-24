@@ -24,7 +24,7 @@
                     {{ $car->description }}
                 </p>
 
-                {{-- <a href=" " class="btn btn-success float-right action_button">Editer</a> --}}
+                <a href="{{ route('carry.car',['id'=>$car->id]) }}" class="btn btn-primary ">Consulter</a>
 
                 @include('0 CarryProject.form.editCar',['id'=>"dd$car->id"])
 

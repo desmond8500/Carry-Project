@@ -22,3 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('cars', 'CarAPIController');
 
 Route::resource('commandes', 'CommandeAPIController');
+
+Route::resource('trajets', 'TrajetAPIController');
+
+Route::resource('lieus', 'LieuAPIController');

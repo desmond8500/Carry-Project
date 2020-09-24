@@ -64,6 +64,7 @@
                             <b>Email :</b> <span class="float-right">{{ $user->email }}</span>
                         </li>
                     </ul>
+
                     @include('0 CarryProject.form.editUser')
                 </div>
             </div>

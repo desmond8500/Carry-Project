@@ -50,3 +50,8 @@ Route::resource('cars', 'CarController');
 
 
 Route::resource('commandes', 'CommandeController');
+
+
+Route::resource('trajets', 'TrajetController');
+
+Route::resource('lieus', 'LieuController');

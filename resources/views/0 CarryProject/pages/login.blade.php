@@ -9,9 +9,11 @@
             <form action="{{ route('carry.auth') }}" method="post" class="row">
                 @csrf
                 <div class="form-group col-md-12">
+                    <label for="">E-mail</label>
                     <input type="text" class="form-control" name="email" placeholder="Email" required>
                 </div>
                 <div class="form-group col-md-12">
+                    <label for="">Mot de passe</label>
                     <input type="password" class="form-control" name="password" placeholder="Mot de passe" required>
                 </div>
                 <div class="col-md-12">

@@ -26,14 +26,17 @@
                 <input type="text" class="form-control" name="disponibilite" value="true" hidden>
 
                 <div class="form-group">
+                    <label for="">Titre</label>
                     <input type="text" class="form-control" name="name" placeholder="Titre" value="{{ $car->name }}">
                 </div>
 
                 <div class="form-group">
+                    <label for="">Volume disponible</label>
                     <input type="text" class="form-control" name="volume" placeholder="Volume" value="{{ $car->volume }}">
                 </div>
 
                 <div class="form-group">
+                    <label for="">Matricule du véhicule</label>
                     <input type="text" class="form-control" name="ci" placeholder="Immatriculation du véhicule" value="{{ $car->ci }}">
                 </div>
 
@@ -41,6 +44,7 @@
                     <input type="file" class="form-control" name="photo" >
                 </div>
                 <div class="form-group">
+                    <label for="">Description</label>
                     <textarea name="description" class="form-control" cols="30" rows="10">{{ $car->description }}</textarea>
                 </div>
 

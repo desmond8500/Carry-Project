@@ -1,7 +1,4 @@
 <div>
-    @php
-        // dd($car);
-    @endphp
     <!-- The only way to do great work is to love what you do. - Steve Jobs -->
     <div class="card card-body mb-2 border border-secondary">
         <div class="row">
@@ -14,7 +11,7 @@
                     <span class="title">Volume:</span> {{ $car->volume }}
                 </div>
                 <div>
-                    <span class="title">Tarif:</span> {{ $car->prix }}
+                    <span class="title">Tarif:</span> {{ $car->prix ?? "15 000 CFA"}}
                 </div>
                 <a href="{{ route('carry.car',['id'=>$car->id]) }}" class="btn btn-primary float-right action_button">Consulter</a>
             </div>
