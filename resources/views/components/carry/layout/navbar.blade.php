@@ -1,5 +1,6 @@
 <div>
     <!-- Simplicity is the ultimate sophistication. - Leonardo da Vinci -->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
         <div class="container">
             <a class="navbar-brand" href="{{route('index')}}">Carry Project</a>
@@ -9,11 +10,15 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    @foreach ($menus as $menu)
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route($menu->route) }}">{{ $menu->name }}</a>
-                        </li>
-                    @endforeach
+                    @auth
+                        @foreach ($menus as $menu)
+                            @if ($menu->access == 0 || $menu->access == $user->role)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route($menu->route) }}">{{ $menu->name }}</a>
+                                </li>
+                            @endif
+                        @endforeach
+                    @endauth
 
                 </ul>
                 <div class="form-inline my-2 my-lg-0">

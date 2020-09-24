@@ -14,11 +14,11 @@
         </li>
         @foreach ($page->getMenu() as $item)
             <li class="nav-item">
-                @if ()
+                {{-- @if () --}}
                     <a class="nav-link active" href="{{route($item->route)}}">{{ $item->name }}</a>
-                @else
+                {{-- @else
                     <a class="nav-link" href="{{route($item->route)}}">{{ $item->name }}</a>
-                @endif
+                @endif --}}
             </li>
         @endforeach
       {{-- <li class="nav-item dropdown">

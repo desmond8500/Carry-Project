@@ -1,0 +1,15 @@
+.action_button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 10px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: darkgrey;
+    color: white;
+}

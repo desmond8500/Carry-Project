@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/carry.css') }}">
     <title>Carry Project</title>
 </head>
 <body>
     @php
         $menus = json_decode('
              [
-                 { "name": "Acceuil", "route": "carry.index" },
-                 { "name": "Notes", "route": "devnotes" }
+                 { "name": "Commandes", "route": "devnotes" , "access": "0"},
+                 { "name": "Clients", "route": "devnotes" , "access": "2"},
+                 { "name": "Véhicules", "route": "carry.carList" , "access": "2"}
              ]
         ');
     @endphp
@@ -33,16 +35,3 @@
     <script src="{{ asset('js/app.js')}}"></script>
 </body>
 </html>
-
-
- <style>
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: darkgrey;
-  color: white;
-}
-</style>
-

@@ -1,9 +1,12 @@
 <div>
+    @php
+        // dd($car);
+    @endphp
     <!-- The only way to do great work is to love what you do. - Steve Jobs -->
-    <div class="card card-body mb-2">
+    <div class="card card-body mb-2 border border-secondary">
         <div class="row">
             <div class="col-md-4">
-                <img class="img-fluid" src="{{ asset($car->image) }}" alt="" >
+                <img class="img-fluid" src="{{ asset("storage/$car->photo") }}" alt="{{ $car->photo }}" >
             </div>
             <div class="col-md-8">
                 <h3>{{ $car->name }}</h3>
@@ -13,7 +16,7 @@
                 <div>
                     <span class="title">Tarif:</span> {{ $car->prix }}
                 </div>
-                <a href="" class="btn btn-primary float-right">Consulter</a>
+                <a href="{{ route('carry.car',['id'=>$car->id]) }}" class="btn btn-primary float-right action_button">Consulter</a>
             </div>
         </div>
     </div>
