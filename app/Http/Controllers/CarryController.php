@@ -51,6 +51,10 @@ class CarryController extends Controller
         return view('0 CarryProject.pages.commandes', compact('list'));
     }
 
+    public function clients(){
+
+        return view('0 CarryProject.pages.clients');
+    }
     public function login(){
 
         return view('0 CarryProject.pages.login');

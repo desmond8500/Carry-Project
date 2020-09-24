@@ -13,6 +13,7 @@ Route::get('carry/car', 'CarryController@car')->name('carry.car');
 Route::get('carry/carList', 'CarryController@carList')->name('carry.carList');
 Route::get('carry/addCommande', 'CarryController@addCommande')->name('carry.addCommande');
 Route::get('carry/commandes', 'CarryController@commandes')->name('carry.commandes');
+Route::get('carry/clients', 'CarryController@clients')->name('carry.clients');
 
 
 // auth
