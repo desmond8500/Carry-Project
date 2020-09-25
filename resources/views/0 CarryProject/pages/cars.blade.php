@@ -42,9 +42,9 @@
             </x-modal>
         </div>
         <div class="col-md-8">
-                 @foreach ($cars as $car)
-                        <x-carry.carinfo :car="$car"/>
-                @endforeach
+            @foreach ($cars as $car)
+                <x-carry.carinfo :car="$car"/>
+            @endforeach
         </div>
 
 

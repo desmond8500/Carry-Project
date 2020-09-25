@@ -18,6 +18,8 @@ class CreateCommandesTable extends Migration
             $table->increments('id');
             $table->string('car_id');
             $table->string('user_id');
+            $table->string('owner_id');
+            $table->string('trajet_id');
             $table->string('statut');
             $table->timestamps();
             $table->softDeletes();

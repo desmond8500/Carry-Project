@@ -27,6 +27,8 @@ class Commande extends Model
     public $fillable = [
         'car_id',
         'user_id',
+        'owner_id',
+        'trajet_id',
         'statut'
     ];
 
@@ -39,6 +41,8 @@ class Commande extends Model
         'id' => 'integer',
         'car_id' => 'string',
         'user_id' => 'string',
+        'owner_id' => 'string',
+        'trajet_id' => 'string',
         'statut' => 'string'
     ];
 

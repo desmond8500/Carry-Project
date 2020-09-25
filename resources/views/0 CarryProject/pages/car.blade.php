@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row mt-4">
-        <div class="col-md-8 card card-body">
+        <div class="col-md-8 card card-body border border-dark">
             <div class="row">
                 <div class="col-md-4">
                     <img class="img-fluid" src="{{ asset("storage/$car->photo") }}" alt="{{ $car->photo }}" >
@@ -35,7 +35,7 @@
             @if($user->id == $car->owner_id)
                 <form action="{{ route('trajets.store') }}" method="post">
                     @csrf
-                    <div class="card card-body">
+                    <div class="card card-body border border-dark">
                         <input type="text" name="car_id" value="{{ $car->id }}" hidden>
                         <div class="form-group">
                             <label for="">Départ</label>
@@ -71,7 +71,7 @@
         </div>
         <div class="col-md-12 mt-4">
             <h3>Trajets</h3>
-            <div class="card">
+            <div class="card border border-dark">
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
@@ -91,7 +91,16 @@
                                 <td>{{ $trajet->prix }}</td>
                                 <td>
                                     @auth
-                                        <a href="" class="btn btn-primary">Commander</a>
+                                    <form action="{{ route('carry.addCommande', [
+                                        'user_id'=> $user->id,
+                                        'car_id'=> $trajet->car_id,
+                                        'owner_id'=> $car->owner_id,
+                                        'trajet_id'=> $trajet->id
+                                        ] ) }}" method="post">
+                                        @csrf
+                                        <button class="btn btn-primary" type="submit">Commander</button>
+                                    </form>
+                                        {{-- <a href="">Commander</a> --}}
                                         {{-- <a class="btn btn-primary float-right mt-4" href="{{ route("carry.addCommande",['user_id'=>$user->id, 'car_id'=>$car->id, 'statut'=>'true']) }}">Commander</a> --}}
                                     @else
                                         <div class="mt-4">

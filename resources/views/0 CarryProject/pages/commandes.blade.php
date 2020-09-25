@@ -23,8 +23,10 @@
                                 <tr>
                                     <th scope="row">{{ $key+1 }}</th>
                                     <td>{{ $commande->name }}</td>
-                                    <td>{{ $commande->prix }}</td>
-                                    <td>@mdo</td>
+                                    <td>{{ $commande->prix ?? "15 000 CFA" }}</td>
+                                    <td>
+                                        <button class="btn btn-primary">Annuler la commande</button>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

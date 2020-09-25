@@ -44,7 +44,9 @@ class CarryController extends Controller
 
         $commande->user_id = $request->user_id;
         $commande->car_id = $request->car_id;
-        $commande->statut = $request->statut;
+        $commande->owner_id = $request->owner_id;
+        $commande->trajet_id = $request->trajet_id;
+        $commande->statut = "Nouveau";
         $commande->save();
 
         return redirect()->back();
@@ -60,9 +62,36 @@ class CarryController extends Controller
     }
 
     public function clients(){
+        $user = Auth::user();
+        $commandes = Commande::where('owner_id',$user->id)->get();
 
-        return view('0 CarryProject.pages.clients');
+        $list = null;
+
+        foreach ($commandes as $key => $commande) {
+            $list[] = $this->getCommande($commande);
+        }
+
+        return view('0 CarryProject.pages.clients',compact('list'));
     }
+
+    public function getCommande($commande){
+        $trajet = Trajet::find($commande->trajet_id);
+        $debut = $this->getLieu($trajet->debut);
+        $fin = $this->getLieu($trajet->fin);
+        $trajet_info = (object) array(
+            "debut" => $debut,
+            "fin" => $fin,
+        );
+
+
+        return (object) array(
+            "client" => User::find($commande->user_id),
+            "car" => Car::find($commande->car_id),
+            "trajet" => Trajet::find($commande->trajet_id),
+            "trajet_info" => $trajet_info
+        );
+    }
+
     public function login(){
 
         return view('0 CarryProject.pages.login');
@@ -104,7 +133,16 @@ class CarryController extends Controller
     }
 
     public function useredit(Request $request){
-        echo "comming";
+        $user = User::find($request->id);
+
+        $user->prenom = $request->prenom;
+        $user->nom = $request->nom;
+        $user->tel = $request->tel;
+        $user->email = $request->email;
+        if ($request->password != null) {
+            $user->password = Hash::make($request->password);
+        }
+        $user->save();
 
         return redirect()->back();
     }

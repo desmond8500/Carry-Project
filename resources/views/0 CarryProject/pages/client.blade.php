@@ -2,4 +2,6 @@
 
 @section('content')
     Vous n'avez aucune requette pour le moment
+
+
 @endsection

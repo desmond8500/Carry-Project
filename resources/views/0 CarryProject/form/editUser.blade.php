@@ -20,7 +20,7 @@
             @csrf
             <div class="modal-body">
                 @csrf
-
+                <input type="text" name="id" value="{{ $user->id }}" hidden>
                 <div class="form-group">
                     <label for="">Prénom</label>
                     <input type="text" class="form-control" name="prenom" placeholder="Prénom" value="{{ $user->prenom }}">
@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Mot de passe</label>
-                    <input type="password" class="form-control" name="password" placeholder="Mot de passe" >
+                    <input type="password" class="form-control" name="password"  >
                 </div>
 
 
